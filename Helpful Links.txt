@@ -1,0 +1,9 @@
+jQuery Page transistion Resource:
+http://www.onextrapixel.com/2010/02/23/how-to-use-jquery-to-make-slick-page-transitions/
+
+jQuery UI Tabs tutorial:
+https://www.youtube.com/watch?v=-0p9C1JYwp4
+
+
+code academy:
+https://www.codecademy.com/en/tracks/jquery

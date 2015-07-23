@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style type="text/css">
+            /*creates a grayscale for and image and toggles on hover. Need to add the class to the img tag 'desaturate'*/
+            img.desaturate{
+              -webkit-filter:grayscale(100%);
+              filter:grayscale(100%);
+            }
+            img.desaturate:hover{
+              -webkit-filter:grayscale(0%);
+              filter:grayscale(0%);
+            }
+
+            body{
+              font-family: Helvetica, Garamond, Arial;
+              text-align:left;
+              background-color: #D9D3C7;
+            }
+            a{
+              text-decoration:none;
+            }
+
+/*http://www.smashingmagazine.com/2011/06/five-useful-interactive-css-jquery-techniques-deconstruted/*/
+            .hover-panel {
+                background-color: #E6E2DF;
+                background-image: url(http://i.imgur.com/CQhLN.png);
+                background-position: 292px 10px;
+                background-repeat: no-repeat;
+                color: #B2AAA4;
+                float: left;
+                height: 130px;
+                width: 262px;
+                margin: 0 10px 10px 0;
+                padding: 15px;
+                 -moz-transition: all 0.2s ease; /* FF3.7+ */
+                   -o-transition: all 0.2s ease; /* Opera 10.5 */
+              -webkit-transition: all 0.2s ease; /* Saf3.2+, Chrome */
+                      transition: all 0.2s ease;
+            }
+            .hover-panel h3 {
+                font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+                font-size: 38px;
+                line-height: 1;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+            }
+            .hover-panel p {
+                font-size: 12px;
+                width: 65%;
+            }
+            .hover-panel:hover {
+                background-color: #237ABE;
+                background-position: 180px 10px;
+            }
+            .hover-panel:hover h3 {
+                color: #FFF;
+                text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+            }
+            .hover-panel:hover p {
+                color: #FFF:
+            }
+            /*Panel 2*/
+            .hover-panel2 {
+                background-color: #E6E2DF;
+                background-image: url(https://www.google.com/images/srpr/logo11w.png);
+                background-position: 292px 10px;
+                background-repeat: no-repeat;
+                color: #B2AAA4;
+                float: left;
+                height: 130px;
+                width: 262px;
+                margin: 0 10px 10px 0;
+                padding: 15px;
+                 -moz-transition: all 0.2s ease; /* FF3.7+ */
+                   -o-transition: all 0.2s ease; /* Opera 10.5 */
+              -webkit-transition: all 0.2s ease; /* Saf3.2+, Chrome */
+                      transition: all 0.2s ease;
+            }
+            .hover-panel2 h3 {
+                font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+                font-size: 38px;
+                line-height: 1;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+            }
+            .hover-panel2 p {
+                font-size: 12px;
+                width: 65%;
+            }
+            .hover-panel2:hover {
+                background-color: #237ABE;
+                background-position: 180px 10px;
+            }
+            .hover-panel2:hover h3 {
+                color: #FFF;
+                text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+            }
+            .hover-panel2:hover p {
+                color: #FFF:
+            }
+  </style>
+  <meta charset="utf-8">
+  <title>jQuery UI Tabs - Default functionality</title>
+
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(document).ready(function(){
+      $("body").css("display","none");
+
+      $("body").fadeIn(1000);
+
+      $("a.transition").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("body").fadeOut(1000, redirectPage);
+      });
+
+      function redirectPage(){
+        window.location = linkLocation;
+      }
+  });
+
+  </script>
+</head>
+<body>
+  <table align ="center">
+    <tr>
+      <td>
+     <a href="#" class="hover-panel">
+        <h3>Panel Title</h3>
+
+        <p>Additional information about the panel goes in a paragraph here</p>
+    </a>
+  </td>
+  </tr>
+  <tr>
+    <td>
+    <a href="rect.html" class="hover-panel2">
+        <h3>Rect.html</h3>
+
+        <p>This link will take you to rect.html</p>
+    </a>
+  </td>
+  </tr>
+  </table>
+</body>
+</html>

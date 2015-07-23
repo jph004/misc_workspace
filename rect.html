@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+        <style type="text/css">
+            body {
+                background-color: #d8d8d8;
+                /*height and width to help scale the page?*/
+                height: 100%;
+                width: 100%;
+            }
+
+
+            /*div {
+                border-radius: 5px;
+                background-color: #ABCDEF;
+                transition: background-color 0.5s ease;
+                display:inline;
+                font-size:25px;
+                padding:20px;
+                border:1px solid #ccc;
+                margin-top:10px;
+            }*/
+            /*.active {
+                background-color:#556677;
+            }
+            
+            ol .ui-selected {
+                background: #F39814; color: white;
+            }*/
+            * {padding:0; margin:0;}
+
+            html {
+                background-color: #d8d8d8;
+                padding:  0;
+                font-family:sans-serif;
+                font-size:14px;
+            }
+
+            p, h3 { 
+                margin-bottom:15px;
+            }
+
+            div {
+                padding:10px;
+                width:auto;
+                background:#fff;
+            }
+            /*tabs*/
+            .tabs li {
+                list-style:none;
+                display:inline;
+            }
+
+            .tabs a {
+                padding:5px 20px;
+                display:inline-block;
+                background:#666;
+                color:#fff;
+                text-decoration:none;
+            }
+
+            .tabs a.active {
+                background:#fff;
+                color:#000;
+            }
+            /*This for the sticky header*/
+            #stickyribbon {
+                    background: #00008B;
+                    color: #fff;
+                    height: 60px;
+                    margin-left:-20px;
+                    width: 100%;
+                    text-align: center;
+            }
+             
+            #stickyribbon ul {
+                    list-style-type: none;
+                    margin: 0 10px;
+                    padding: 10px 40px 15px;
+                    -moz-box-shadow:    0 12px 5px -6px rgba(0, 0, 0, 0.5);
+                    -webkit-box-shadow: 0 12px 5px -6px rgba(0, 0, 0, 0.5);
+                    box-shadow:         0 12px 5px -6px rgba(0, 0, 0, 0.5);
+            }
+             
+            #stickyribbon ul li {
+                    display: inline;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 20px;
+            }
+             
+            #stickyribbon ul li a {
+                    color: #fff;
+                    text-decoration: none;
+            }
+             
+            #stickyribbon ul li a:hover {
+                    color: #c9e0f7;
+            }
+
+        </style>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('ul.tabs').each(function(){
+                    // For each set of tabs, we want to keep track of
+                    // which tab is active and it's associated content
+                    var $active, $content, $links = $(this).find('a');
+
+                    // If the location.hash matches one of the links, use that as the active tab.
+                    // If no match is found, use the first link as the initial active tab.
+                    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+                    $active.addClass('active');
+
+                    $content = $($active[0].hash);
+
+                    // Hide the remaining content
+                    $links.not($active).each(function () {
+                        $(this.hash).hide();
+                    });
+
+                    // Bind the click event handler
+                    $(this).on('click', 'a', function(e){
+                        // Make the old tab inactive.
+                        $active.removeClass('active');
+                        $content.hide();
+
+                        // Update the variables with the new link and content
+                        $active = $(this);
+                        $content = $(this.hash);
+
+                        // Make the tab active.
+                        $active.addClass('active');
+                        $content.fadeIn('slow');
+
+                        // Prevent the anchor's default click action
+                        e.preventDefault();
+                    });
+                });
+            });
+            //body transistion
+            $(document).ready(function(){
+                //clears out the page
+              $("body").css("display","none");
+                //grabs the content and places it in the page
+              $("body").fadeIn(1000);
+                //goes to the new link
+              $("a.transition").click(function(event){
+                event.preventDefault();
+                linkLocation = this.href;
+                $("body").fadeOut(1000, redirectPage);
+              });
+              
+              function redirectPage(){
+                window.location = linkLocation;
+              }
+          });
+
+            //sticky header
+            $(function(){
+                    var stickyRibbonTop = $('#stickyribbon').offset().top;
+                      
+                    $(window).scroll(function(){
+                            if( $(window).scrollTop() > stickyRibbonTop ) {
+                                    $('#stickyribbon').css({position: 'fixed', top: '0px'});
+                            } else {
+                                    $('#stickyribbon').css({position: 'static', top: '0px'});
+                            }
+                    });
+            });
+
+            // helps for scaling the page.
+            $('#body').css('min-height', '100%');
+
+        </script>
+    </head>
+    <body>
+        <div id="" style="background-color:black; width:100%; height:100px; top:0px;">
+            
+        </div>
+        <div id="stickyribbon">
+            <ul>
+                <li><a href="http://www.investopedia.com/investing/investing-basics/" target="_blank">Investing-Basics</a></li>
+                <li><a href="http://www.investopedia.com/investing/bonds-and-fixed-income/" target="_blank">Bonds &amp; Fixed Income</a></li>
+                <li><a href="http://www.investopedia.com/forex/" target="_blank">Forex</a></li>
+                <li><a href="http://www.investopedia.com/investing/fundamental-analysis/" target="_blank">Fundamental Analysis</a></li>
+                <!-- <li><img src="https://www.google.com/images/srpr/logo11w.png"></li> -->
+            </ul>
+        </div>
+
+       <!--  <div id="red">1</div>
+        <div id="blue">2</div>
+        <div id="yellow">3</div>
+        <div id="green">4</div>
+        <div>5</div> -->
+
+       <!--  <ol>
+            <li>Super Mario Bros.</li>
+            <li>Tetris</li>
+            <li>Legend of Zelda: Link's Awakening</li>
+            <li>Kirby's Dream World</li>
+            <li>Burger Time</li>
+            <li>Pokémon Red</li>
+            <li>Pokémon Blue</li>
+        </ol>  -->
+        <ul class='tabs' align="center">
+            <li><a href='#tab1'><b>Tab 1</b></a></li>
+            <li><a href='#tab2'><b>Tab 2</b></a></li>
+            <li><a href='#tab3'><b>Tab 3</b></a></li>
+            <li><a href='#tab4'><b>Tab 4</b></a></li>
+            <li><a href='#tab5'><b>Tab 5</b></a></li>
+        </ul>
+        <div id='tab1'>
+            <h3>Section 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis placerat dolor id aliquet. Sed a orci in justo blandit commodo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+            <a href="tabs.html" class="transition">tabs</a>
+        </div>
+        <div id='tab2'>
+            <h3>Section 2</h3>
+            <table style="margin: 0 auto;">
+                <th>Header 1</th><th>Header 2</th><th>Header 3</th><th>Header 4</th><th>Header 5</th><th>Header 4</th><th>Header 5</th><th>Header 4</th><th>Header 5</th><th>Header 4</th><th>Header 5</th><th>Header 4</th><th>Header 5</th><th>Header 4</th><th>Header 5</th>
+                <tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr>
+                <tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr><tr><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td> <td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td><td>cell1</td><td>cell2</td><td>cell3</td><td>cell4</td><td>cell5</td></tr>
+                <tr>
+                    <td>
+                        2cell1
+                    </td>
+                    <td>
+                        2cell2
+                    </td>
+                    <td>
+                        2cell3
+                    </td>
+                    <td>
+                        2cell4
+                    </td>
+                    <td>
+                        2cell5
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3cell1
+                    </td>
+                    <td>
+                        3cell2
+                    </td>
+                    <td>
+                        3cell3
+                    </td>
+                    <td>
+                        3cell4
+                    </td>
+                    <td>
+                        3cell5
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        4cell1
+                    </td>
+                    <td>
+                        4cell2
+                    </td>
+                    <td>
+                        4cell3
+                    </td>
+                    <td>
+                        4cell4
+                    </td>
+                    <td>
+                        4cell5
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        5cell1
+                    </td>
+                    <td>
+                        5cell2
+                    </td>
+                    <td>
+                        5cell3
+                    </td>
+                    <td>
+                        5cell4
+                    </td>
+                    <td>
+                        5cell5
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id='tab3'>
+            <h3>Section 3</h3>
+            <p>Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.</p>
+        </div>
+        <div id='tab4'>
+            <h3>Section 4</h3>
+            <p>Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.</p>
+        </div>
+        <div id='tab5'>
+            <h3>Section 5</h3>
+            <p>Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.Suspendisse potenti. Morbi laoreet magna vitae est mollis ultricies. Mauris eget enim ac justo eleifend malesuada. Proin non consectetur est. Integer semper laoreet porta. Praesent facilisis leo nec libero tincidunt blandit.</p>
+        </div>
+  ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>ssss<br>
+    </body>
+</html>
