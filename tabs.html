@@ -15,22 +15,65 @@
             body{
               font-family: Helvetica, Garamond, Arial;
               text-align:left;
-              background-color: #D9D3C7;
+              /*height and width to help scale the page?*/
+              height: 100%;
+              width: 100%;
             }
             a{
               text-decoration:none;
+            }
+            html {
+                background-color: #d8d8d8;
+                padding:  0;
+                font-family:sans-serif;
+                font-size:14px;
+            }
+
+  /*This for the sticky header*/
+            #stickyribbon {
+                    background: #B8B8B8;
+                    color: #0033CC;
+                    height: 60px;
+                    margin-left:-20px;
+                    width: 100%;
+                    text-align: center;
+            }
+             
+            #stickyribbon ul {
+                    list-style-type: none;
+                    margin: 0 10px;
+                    padding: 10px 40px 15px;
+                    -moz-box-shadow:    0 12px 5px -6px rgba(0, 0, 0, 0.5);
+                    -webkit-box-shadow: 0 12px 5px -6px rgba(0, 0, 0, 0.5);
+                    box-shadow:         0 12px 5px -6px rgba(0, 0, 0, 0.5);
+            }
+             
+            #stickyribbon ul li {
+                    display: inline;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 20px;
+            }
+             
+            #stickyribbon ul li a {
+                    color: #fff;
+                    text-decoration: none;
+            }
+             
+            #stickyribbon ul li a:hover {
+                    color: #c9e0f7;
             }
 
 /*http://www.smashingmagazine.com/2011/06/five-useful-interactive-css-jquery-techniques-deconstruted/*/
             .hover-panel {
                 background-color: #E6E2DF;
                 background-image: url(http://i.imgur.com/CQhLN.png);
-                background-position: 292px 10px;
+                background-position: 292px 50px;
                 background-repeat: no-repeat;
                 color: #B2AAA4;
                 float: left;
-                height: 130px;
-                width: 262px;
+                height: 200px;
+                width: 332px;
                 margin: 0 10px 10px 0;
                 padding: 15px;
                  -moz-transition: all 0.2s ease; /* FF3.7+ */
@@ -39,7 +82,7 @@
                       transition: all 0.2s ease;
             }
             .hover-panel h3 {
-                font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+                font-family: tandelle-1, tandelle-2, Helvetica, Sans-serif, sans;
                 font-size: 38px;
                 line-height: 1;
                 margin: 0 0 10px;
@@ -51,7 +94,7 @@
             }
             .hover-panel:hover {
                 background-color: #237ABE;
-                background-position: 180px 10px;
+                background-position: 180px 50px;
             }
             .hover-panel:hover h3 {
                 color: #FFF;
@@ -64,12 +107,12 @@
             .hover-panel2 {
                 background-color: #E6E2DF;
                 background-image: url(https://www.google.com/images/srpr/logo11w.png);
-                background-position: 292px 10px;
+                background-position: 292px 50px;
                 background-repeat: no-repeat;
                 color: #B2AAA4;
                 float: left;
-                height: 130px;
-                width: 262px;
+                height: 200px;
+                width: 332px;
                 margin: 0 10px 10px 0;
                 padding: 15px;
                  -moz-transition: all 0.2s ease; /* FF3.7+ */
@@ -78,7 +121,7 @@
                       transition: all 0.2s ease;
             }
             .hover-panel2 h3 {
-                font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+                font-family: tandelle-1, tandelle-2, Helvetica, Sans-serif, sans;
                 font-size: 38px;
                 line-height: 1;
                 margin: 0 0 10px;
@@ -90,7 +133,7 @@
             }
             .hover-panel2:hover {
                 background-color: #237ABE;
-                background-position: 180px 10px;
+                background-position: 180px 50px;
             }
             .hover-panel2:hover h3 {
                 color: #FFF;
@@ -98,6 +141,92 @@
             }
             .hover-panel2:hover p {
                 color: #FFF:
+            }
+            .hover-panel3 {
+                background-color: #E6E2DF;
+                background-image: url(data:image/jpeg;base64,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);
+                background-position: 292px 50px;
+                background-repeat: no-repeat;
+                color: #B2AAA4;
+                float: left;
+                height: 200px;
+                width: 332px;
+                margin: 0 10px 10px 0;
+                padding: 15px;
+                 -moz-transition: all 0.2s ease; /* FF3.7+ */
+                   -o-transition: all 0.2s ease; /* Opera 10.5 */
+              -webkit-transition: all 0.2s ease; /* Saf3.2+, Chrome */
+                      transition: all 0.2s ease;
+            }
+            .hover-panel3 h3 {
+                font-family: tandelle-1, tandelle-2, Helvetica, Sans-serif, sans;
+                font-size: 38px;
+                line-height: 1;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+            }
+            .hover-panel3 p {
+                font-size: 12px;
+                width: 65%;
+            }
+            .hover-panel3:hover {
+                background-color: #237ABE;
+                background-position: 180px 50px;
+            }
+            .hover-panel3:hover h3 {
+                color: #FFF;
+                text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+            }
+            .hover-panel3:hover p {
+                color: #FFF:
+            }
+
+            /*Panel 4*/
+            .hover-panel4 {
+                background-color: #E6E2DF;
+                background-image: url(data:image/png;base64,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);
+                background-position: 292px 50px;
+                background-repeat: no-repeat;
+                color: #B2AAA4;
+                float: left;
+                height: 200px;
+                width: 332px;
+                margin: 0 10px 10px 0;
+                padding: 15px;
+                 -moz-transition: all 0.2s ease; /* FF3.7+ */
+                   -o-transition: all 0.2s ease; /* Opera 10.5 */
+              -webkit-transition: all 0.2s ease; /* Saf3.2+, Chrome */
+                      transition: all 0.2s ease;
+            }
+            .hover-panel4 h3 {
+                font-family: tandelle-1, tandelle-2, Helvetica, Sans-serif, sans;
+                font-size: 38px;
+                line-height: 1;
+                margin: 0 0 10px;
+                text-transform: uppercase;
+            }
+            .hover-panel4 p {
+                font-size: 12px;
+                width: 65%;
+            }
+            .hover-panel4:hover {
+                background-color: #237ABE;
+                background-position: 180px 50px;
+            }
+            .hover-panel4:hover h3 {
+                color: #FFF;
+                text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+            }
+            .hover-panel4:hover p {
+                color: #FFF:
+            }
+
+            body {
+                height: 1000px;
+                background: -webkit-linear-gradient(0deg, #B8B8B8 , #0033CC); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(0deg, #B8B8B8, #0033CC); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(0deg, #B8B8B8, #0033CC); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(0deg, #B8B8B8, #0033CC); /* Standard syntax (must be last) */
             }
   </style>
   <meta charset="utf-8">
@@ -123,10 +252,38 @@
       }
   });
 
+  //sticky header
+  $(function(){
+          var stickyRibbonTop = $('#stickyribbon').offset().top;
+            
+          $(window).scroll(function(){
+                  if( $(window).scrollTop() > stickyRibbonTop ) {
+                          $('#stickyribbon').css({position: 'fixed', top: '0px'});
+                  } else {
+                          $('#stickyribbon').css({position: 'static', top: '0px'});
+                  }
+          });
+  });
+
+  // helps for scaling the page.
+  $('#body').css('min-height', '100%');
+
   </script>
 </head>
 <body>
-  <table align ="center">
+<div id="" style="background-color:#303030 ; width:100%; height:100px; top:0px;">
+         <h1 style="color:white" align="center">justin</h1>   
+        </div>
+        <div id="stickyribbon">
+            <ul>
+                <li><a href="http://www.investopedia.com/investing/investing-basics/" target="_blank">Investing-Basics</a></li>
+                <li><a href="http://www.investopedia.com/investing/bonds-and-fixed-income/" target="_blank">Bonds &amp; Fixed Income</a></li>
+                <li><a href="http://www.investopedia.com/forex/" target="_blank">Forex</a></li>
+                <li><a href="http://www.investopedia.com/investing/fundamental-analysis/" target="_blank">Fundamental Analysis</a></li>
+                <!-- <li><img src="https://www.google.com/images/srpr/logo11w.png"></li> -->
+            </ul>
+        </div>
+  <table align ="center" style="background-color:#303030;">
     <tr>
       <td>
      <a href="#" class="hover-panel">
@@ -135,13 +292,27 @@
         <p>Additional information about the panel goes in a paragraph here</p>
     </a>
   </td>
-  </tr>
-  <tr>
     <td>
     <a href="rect.html" class="hover-panel2">
         <h3>Rect.html</h3>
 
         <p>This link will take you to rect.html</p>
+    </a>
+  </td>
+</tr>
+<tr>
+  <td>
+    <a href="rect.html" class="hover-panel3">
+        <h3>Panel 3</h3>
+
+        <p>This is simply a placeholder</p>
+    </a>
+  </td>
+  <td>
+    <a href="rect.html" class="hover-panel4">
+        <h3>Panel 4</h3>
+
+        <p>This is simply a placeholder</p>
     </a>
   </td>
   </tr>
