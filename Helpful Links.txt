@@ -7,3 +7,6 @@ https://www.youtube.com/watch?v=-0p9C1JYwp4
 
 code academy:
 https://www.codecademy.com/en/tracks/jquery
+
+lightbox:
+http://lokeshdhakar.com/projects/lightbox2/
