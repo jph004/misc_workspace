@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.big{
+		width:auto; margin:20px auto; 
+	}
+	.small{
+		width:auto; margin:20px auto; border-top:1px solid #c7c8ca; border-bottom:1px solid #c7c8ca; 
+	}
+	
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// document.write($(window).width());
+		// Sets the default value for the image
+		/*
+			iPad Width = 768px
+			iPhone 6 Width = 375 px
+			iPhone 6 Plus Width = 414 pts
+		*/
+		if($(window).width() > 500){
+			$("img").css( "background-color","yellow" );
+			// $("#thing").css( "width","300px" );
+			$("body").css("background-color","black");
+			$("#scaleOption").removeClass();
+			$("#scaleOption").addClass("big");
+		}else{
+			$("img").css( "background-color","black");
+			// $("#thing").css( "width","260px" );
+
+			$("#scaleOption").removeClass();
+			$("#scaleOption").addClass("small");
+		}
+		// Changes the value when the browser window is resized 
+		$(window).resize(function() {
+			// $( "body" ).prepend( "<div>" + $(window).width() + "</div>" );
+			// $( "body" ).prepend( "<div>" + $(window).height() + "</div>" );
+			if($(window).width() >= 375){
+				$("img").css( "background-color","yellow" );
+				$("#scaleOption").removeClass();
+				$("#scaleOption").addClass("big");
+			}else{
+				$("img").css( "background-color","black");
+				$("#scaleOption").removeClass();
+				$("#scaleOption").addClass( "small" );
+			}
+
+		});
+	});
+</script>
+<body id="body">
+	<div id="scaleOption">
+		<img id="thing" src="http://www.w3schools.com/images/w3schools.png">
+	</div>
+</body>
+</html>
