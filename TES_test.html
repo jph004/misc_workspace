@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-ui.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
+		<style>
+			html{
+			    height: 100%;
+			    width: 100%;
+			}
+
+			body{
+				/*http://www.stealthconcealment.com/wp-content/uploads/2015/05/CellTower.jpg*/
+			    background: url("http://media2.govtech.com/images/shutterstock_cell_towers.jpg") no-repeat top center fixed;
+			    background-size: cover;
+			    margin: 0;
+			    padding: 0;
+			    height: 100%;
+			    width: 100%;
+			}
+
+			.sticky_header{
+		      	position: fixed;
+				width: 100%;
+				text-align: left;
+				font-size: 36px;
+				line-height: 108px;
+				height: 108px;
+				background: #335C7D;
+				color: #fff;
+				font-family: 'PT Sans', sans-serif;
+            	-webkit-transition: all 0.2s ease;
+            	transition: all 0.2s ease;
+			}
+
+			.sticky_header.sticky {
+				font-size: 24px;
+				line-height: 48px;
+				height: 48px;
+				background: #efc47D;
+				text-align: left;
+				padding-left: 20px;
+			}
+
+			header nav {
+				display:inline-block;
+				float: right;
+			}
+			.header_image {
+				width: 200px;
+				height: 100px;
+				-webkit-transition: all 0.2s ease;
+            	transition: all 0.2s ease;
+			}
+			.header_image.sticky{
+				width: 100px;
+				height: 50px;
+			}
+			.content{
+			    width: 100%;
+			    height: 50%;
+			    background: maroon;
+			    margin: 0;
+			    padding: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 1){
+					$('header').addClass("sticky");
+					$('#header_image').addClass('sticky');
+				} else {
+					$('header').removeClass("sticky");
+					$('#header_image').removeClass('sticky');
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+		<!-- "TES/banner/TES1_gth_NEW2.png" -->
+		<div class="header">
+			<header class="sticky_header"><img src="TES/banner/TES1_gth_NEW2.png" class="header_image" id="header_image" width="200" height="100" alt="Big Image" />Sticky Header
+				<nav>
+					<a>one</a>
+				</nav>
+				<nav>
+					<a>one</a>
+				</nav>
+				<nav>
+					<a>one</a>
+				</nav>
+			</header>
+		</div>
+		<div class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+		<br>
+		<div class="content">
+			This is the second area for content.
+		</div>
+		<br>
+		<div class="content">
+			This is the second area for content.
+		</div>
+	</body>
+</html>
